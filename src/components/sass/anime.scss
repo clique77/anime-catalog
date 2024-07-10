@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@mixin cover() {
+  background: linear-gradient(to right, #e100ff, #f706ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.anime-item {
+  padding: 3rem 18rem;
+  background-color: hsl(0, 0%, 8%);
+  font-family: "Roboto";
+  width: 50%;
+  margin: auto;
+
+  h1 {
+    display: inline-block;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    @include cover();
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      transform: skew(-3deg);
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    font-size: 3rem;
+    cursor: pointer;
+    @include cover();
+  }
+
+  .description {
+    margin-top: 0.5rem;
+    color: #fff;
+    line-height: 1.7rem;
+
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #b433e2;
+      font-weight: 600;
+    }
+  }
+
+  .detail {
+    background-color: rgba(81, 81, 81, 0.511);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 5px solid hsl(291, 92%, 62%);
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto";
+  }
+
+  .info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .info img {
+    margin-right: 2rem;
+    border-radius: 20px;
+    width: 300px;
+  }
+
+  .info p {
+    margin: 0.5rem 0;
+    color: #fff;
+  }
+
+  .trailer-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .trailer-con iframe {
+    max-width: 100%;
+    border: 5px solid hsl(303, 100%, 68%);
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: hsl(0, 0%, 13%);
+  }
+
+  .characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 2rem;
+    background: hsl(0, 0%, 13%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 5px solid hsl(303, 100%, 68%);
+
+    a {
+      text-decoration: none;
+    }
+
+    .character {
+      padding: 0.4rem 0.6rem;
+      border-radius: 10px;
+      background-color: #303030;
+      transition: all 0.4s ease-in-out;
+
+      img {
+        width: 100%;
+      }
+      h4 {
+        color: #fff;
+        padding: 0.5rem 0;
+      }
+      p {
+        color: hsl(303, 100%, 68%);
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  span {
+    @include cover();
+  }
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+  .anime-item {
+    padding: 2rem 5rem;
+    width: 80%;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .description button {
+      font-size: 1rem;
+    }
+
+    .detail {
+      padding: 1.5rem;
+    }
+
+    .info img {
+      width: 100px;
+      height: auto;
+    }
+  }
+}
+
+/*media for better view */
+@media (max-width: 1300px) {
+  .anime-item {
+    padding: 2rem 5rem;
+    width: 80%;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .description button {
+      font-size: 1rem;
+    }
+
+    .detail {
+      padding: 1.5rem;
+    }
+
+    .info img {
+      width: 200px;
+      height: auto;
+    }
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .anime-item {
+    padding: 1rem 2rem;
+    width: 90%;
+    margin-left: -11px;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .description button {
+      font-size: 0.9rem;
+    }
+
+    .detail {
+      padding: 1rem;
+    }
+
+    .info {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .info img {
+      margin-right: 0;
+      margin-bottom: 1rem;
+      width: 80%;
+      height: auto;
+    }
+
+    .info p {
+      text-align: center;
+    }
+  }
+}
